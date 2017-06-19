@@ -5,6 +5,7 @@ require_relative('../models/artist')
 Album.delete_all
 Artist.delete_all
 
+
 artist_01 = Artist.new({
   'name' => "Hiatus Kaiyote"
   })
@@ -36,3 +37,8 @@ album_03 = Album.new({
 album_01.save
 album_02.save
 album_03.save
+
+
+
+# binding.pry
+# nil

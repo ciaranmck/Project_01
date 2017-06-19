@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require('pry')
 
 class Album
 
@@ -19,10 +20,16 @@ class Album
     @id = new_album.first()['id'].to_i
   end
 
+  # def artist_name(id) 
+  #   sql = "SELECT * artists where id = #{artist_id};"
+  #   artists = SqlRunner.run(sql)
+  #   return artists
+  # end
+
   def self.all()
     sql = "SELECT * FROM albums;"
-    artists = SqlRunner.run(sql)
-    result = artists.map { |album| Album.new(album) }
+    albums = SqlRunner.run(sql)
+    result = albums.map { |album| Album.new(album) }
     return result
   end
 
@@ -37,5 +44,8 @@ class Album
     sql = "DELETE FROM albums;"
     SqlRunner.run( sql )
   end
+
+# binding.pry
+
 
 end

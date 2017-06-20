@@ -20,11 +20,12 @@ class Album
     @id = new_album.first()['id'].to_i
   end
 
-  # def artist_name(id) 
-  #   sql = "SELECT * artists where id = #{artist_id};"
-  #   artists = SqlRunner.run(sql)
-  #   return artists
-  # end
+  def artist_name() 
+    sql = "SELECT * FROM artists WHERE id = #{@artist_id};"
+    result = SqlRunner.run(sql)[0]
+    artist = Artist.new(result)
+    return artist.name
+  end
 
   def self.all()
     sql = "SELECT * FROM albums;"

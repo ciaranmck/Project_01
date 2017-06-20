@@ -10,10 +10,19 @@ get '/' do
 end
 
 get '/inventory' do
+  @albums = Album.all
+  @artists = Artist.all
   erb (:inventory)
 end
 
 get '/order' do
+  @albums = Album.all
+  @artists = Artist.all
+  erb (:order)
+end
+
+post '/order/album' do
+  @albums = Album.all
   erb (:order)
 end
 

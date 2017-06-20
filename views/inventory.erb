@@ -1,0 +1,22 @@
+<h1>Inventory Page</h1>
+
+<table>
+  <tr>
+    <th>Album</th>
+    <th></th>
+    <th>Artist</th>
+    <th></th>
+    <th>Quantity</th>
+  </tr>
+  <% for album in @albums %>
+  <tr>
+    <td><%= album.title %></td>
+    <td> | </td>
+    <td><%= album.artist_name %></td>
+    <td> | </td>
+    <td><%= album.quantity %></td>
+
+    <% end %>
+  </tr>
+
+</table>

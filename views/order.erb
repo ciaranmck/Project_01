@@ -1,0 +1,15 @@
+<h1>Place an Order</h1>
+
+<form action="/order/album" method="post">
+  <label>
+  Select an artist:
+    <select name="artist_id">
+      <% for artist in @artists %>
+      <option value="<%= artist.id %>"><%= artist.name %></option>
+      <% end %>
+    </select>
+  </label>
+  <input class="btn btn--action" type='submit' value="Continue">
+</form>
+
+<!-- Trying to add artists id to the path -->
